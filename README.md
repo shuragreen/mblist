@@ -1,6 +1,6 @@
 # mblist
 
-'git clone git@github.com:shuragreen/mblist.git'
+'https://github.com/shuragreen/mblist.git'
 
 'cd path/mblist' 
 

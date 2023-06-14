@@ -1,28 +1,28 @@
-# Версия docker-compose
+# docker-compose version
 version: '2'
-# Список наших сервисов (контейнеров)
+# List of services (containers)
 services:
     nginx:
-      # используем последний стабильный образ nginx
+      # use the latest stable nginx image
         image: nginx:latest
-        # маршрутизируем порты
+        # route ports
         ports:
             - "8000:80"
-        # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
+        # mount directories, on the left are directories on the main machine, on the right - where they are mounted in the container
         volumes:
             - ./hosts:/etc/nginx/conf.d
             - ./www:/var/www
             - ./logs:/var/log/nginx
-        # nginx должен общаться с php контейнером
+        # nginx needs to communicate with php container
         links:
             - php
     php:
-        # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
+        # we have our own image for PHP, specify the path to it and say that it needs to be built
         build: ./images/php
-        # этот образ будет общаться с mysql
+        # this image will communicate with mysql
         links:
             - mysql
-        # монтируем директорию с проектами
+        # mount the project directory
         volumes:
             - ./www:/var/www
     mysql:
@@ -31,7 +31,7 @@ services:
             - "3306:3306"
         volumes:
             - ./mysql:/var/lib/mysql
-        # задаем пароль для root пользователя
+        # set password for root user
         environment:
             MYSQL_ROOT_PASSWORD: shgreen-secret
     pma:

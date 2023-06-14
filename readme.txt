@@ -14,6 +14,8 @@
 # After starting Docker build and run the services
 'docker-compose up -d'
 
+# The result you can see at adress localhost:8000, phpMyAdmin: localhost:8183, mysql: mysql:3306. 
+# If nesesary you can reconnect these adresses to IP where corresponden containers will be launched.
 # This is the first docker-code for me. Although it didn't include any encryption, to write
 # and debug the code it took me a whole day. And another day dealt with comments in English
 # and studying GitHUB.

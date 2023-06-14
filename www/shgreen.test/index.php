@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Рассылки подписчикам магазина DOGS ACTIVE</title>
+<title>Newsletters to DOGS ACTIVE subscribers</title>
 <meta charset="utf-8" />
 </head>
 <body>
-<h2>Список еженедельных рассылок подписчикам магазина DOGS ACTIVE</h2>
+<h2>Weekly mailing list for DOGS ACTIVE store subscribers</h2>
 <?php
 $conn = new mysqli("mysql", "root", "shgreen-secret", "myurl");
 if($conn->connect_error){
-    die("Ошибка: " . $conn->connect_error);
+    die("Error: " . $conn->connect_error);
 }
 $sql = "SELECT * FROM myurl";
 if($result = $conn->query($sql)){
-    $rowsCount = $result->num_rows; // количество полученных строк
-    echo "<p>Получено ссылок: $rowsCount</p>";
+    $rowsCount = $result->num_rows; // number of received rows
+    echo "<p>Received rows: $rowsCount</p>";
     foreach($result as $row){
         echo "<table><tr><th>Id</th><th>Ссылка</th></tr>";
         echo "<tr>";
@@ -26,7 +26,7 @@ if($result = $conn->query($sql)){
     echo "</table>";
     $result->free();
 } else{
-    echo "Ошибка: " . $conn->error;
+    echo "Error: " . $conn->error;
 }
 $conn->close();
 ?>

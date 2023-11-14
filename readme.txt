@@ -23,4 +23,4 @@
 # the database through phpAdmin. Or include structuring in the script itself. Didn't make a
 # long code, because the main idea was to show the launch and interaction of services in
 # different containers. Also wanted to show what do all the time, including experience with
-# Photoshop and stuff like that!
+# Photoshop and stuff like that! (update more https://4showdog.com/blog/)
